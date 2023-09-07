@@ -53,10 +53,10 @@ module.exports = {
                 toplanti.save().then(() => {console.logDate("Toplanti basariyla kaydedildi.")}).catch(err => console.log(err));
 
                 //set a timer to send the message
-                setTimeout(() => {
-                    interaction.channel.send(`Toplantı başladı! <@&${metin}>`);
-                    toplanti.deleteOne({tarih: date}).then(() => {console.logDate("Toplanti basariyla silindi.")}).catch(err => console.log(err));
-                }, date - Date.now());
+                // setTimeout(() => {
+                //     interaction.channel.send(`Toplantı başladı! <@&${metin}>`);
+                //     toplanti.deleteOne({tarih: date}).then(() => {console.logDate("Toplanti basariyla silindi.")}).catch(err => console.log(err));
+                // }, date - Date.now());
             } else {
                 return interaction.reply("Lütfen saati doğru formatta giriniz. (örn. 23:59)");
             }
