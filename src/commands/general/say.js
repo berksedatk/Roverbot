@@ -13,9 +13,9 @@ module.exports = {
         if (interaction.channel != null) {
             if (interaction.channel.type== "text") {
                 const channel = client.channels.cache.get(interaction.channel.id);
-                interaction.deferReply();
-                interaction.deleteReply();
-                    channel.send(input);
+                console.log(channel)
+                interaction.reply({content: "Message has been sent!", ephemeral: true });
+                channel.send(input);
             }
         }
     }
