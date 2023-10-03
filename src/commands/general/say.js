@@ -10,8 +10,12 @@ module.exports = {
 			.setRequired(true)),
     execute: (client, interaction) => {
         let input = interaction.options.getString('input');
-        interaction.channel.send({
-            content: input
-        })
+        if (interaction.channel != null) {
+            if (interaction.channel.type== "text") {
+                interaction.deferReply();
+                interaction.deleteReply();
+                interaction.channel.send(input);
+            }
+        }
     }
 }
