@@ -10,6 +10,7 @@ module.exports = {
 			.setRequired(true)),
     execute: (client, interaction) => {
         let input = interaction.options.getString('input');
+        console.log(input)
         const channel = client.channels.cache.get(interaction.channel.id);
         console.log(channel)
         interaction.reply({content: "Message has been sent!", ephemeral: true });
