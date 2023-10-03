@@ -42,10 +42,10 @@ module.exports = async (client) => {
     toplantilar.forEach(toplanti => {
         const date = new Date(toplanti.tarih * 1000);
         date.setHours(date.getHours() + 3);
-        setTimeout(() => {
-            client.channels.cache.get(toplanti.kanal).send(`Toplantı başladı! <@&${toplanti.metin}>`);
-            toplanti.delete().then(() => {console.logDate("Toplanti basariyla silindi.")}).catch(err => console.log(err));
-        }, date.getTime() - Date.now());
+        //setTimeout(() => {
+        //    client.channels.cache.get(toplanti.kanal).send(`Toplantı başladı! <@&${toplanti.metin}>`);
+        //    toplanti.delete().then(() => {console.logDate("Toplanti basariyla silindi.")}).catch(err => console.log(err));
+        //}, date.getTime() - Date.now());
     });
 
     client.ready = true;
