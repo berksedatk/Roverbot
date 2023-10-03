@@ -12,9 +12,10 @@ module.exports = {
         let input = interaction.options.getString('input');
         if (interaction.channel != null) {
             if (interaction.channel.type== "text") {
+                const channel = client.channels.cache.get(interaction.channel.id);
                 interaction.deferReply();
                 interaction.deleteReply();
-                interaction.channel.send(input);
+                    channel.send(input);
             }
         }
     }
