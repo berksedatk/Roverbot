@@ -11,11 +11,11 @@ module.exports = {
     execute: (client, interaction) => {
         let input = interaction.options.getString('input');
         const channel = client.channels.cache.get(interaction.channel.id);
-        interaction.reply({content: "Message has been sent!", ephemeral: true }).then(message => {
-            setTimeout(function(){
-                message.delete();
-              }, 2000)
-        });
+        interaction.reply({content: "Message has been sent!", ephemeral: true })
+
+        setTimeout(function(){
+            interaction.deleteReply();
+            }, 2000)
         channel.send(input);
 
     }
